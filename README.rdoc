@@ -1,7 +1,6 @@
 = Baseball Stats
 
 == Project Summary
-- Baseball Stats runs on ruby 1.8.7 (haven't updated my laptop to newest version, sorry not tested with 1.9.x)
 - Didn't use a database
   - I wasn't sure if I could due to more work than just installing some gems
   - Also would take a long time to initially set up program since 20000+ rows must be inserted somehow into a database

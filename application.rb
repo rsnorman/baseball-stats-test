@@ -5,11 +5,11 @@ Bundler.require
 
 require 'active_support/all'
 
-Dir["lib/*.rb"].each {|f| require f}
-Dir["file-readers/*.rb"].each {|f| require f}
-Dir["helpers/*.rb"].each {|f| require f}
-Dir["models/*.rb"].each {|f| require f}
-Dir["reports/*.rb"].each {|f| require f}
+Dir["./lib/*.rb"].each {|f| require f}
+Dir["./file-readers/*.rb"].each {|f| require f}
+Dir["./helpers/*.rb"].each {|f| require f}
+Dir["./models/*.rb"].each {|f| require f}
+Dir["./reports/*.rb"].each {|f| require f}
 
 # Namespace for BaseballStats library
 module BaseballStats
@@ -38,7 +38,7 @@ module BaseballStats
 			StatsFileReader.parse(file)
 		end
 
-		
+
 		separator
 		log "Listing reports...", :color => :green
 		reports = Report.all
