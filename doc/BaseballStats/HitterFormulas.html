@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: BaseballStats::HitterFormulas
+  
+    &mdash; Documentation by YARD 0.8.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (H)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../BaseballStats.html" title="BaseballStats (module)">BaseballStats</a></span></span>
+     &raquo; 
+    <span class="title">HitterFormulas</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: BaseballStats::HitterFormulas
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/hitter_formulas.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Hitter formulas that can be added to a Player model</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#calculate_slugging_percentage-class_method" title="calculate_slugging_percentage (class method)">+ (Float) <strong>calculate_slugging_percentage</strong>(_stats) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculates the slugging percentage from an array of stats.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#batting_average-instance_method" title="#batting_average (instance method)">- (Float) <strong>batting_average</strong>(year = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets the batting averge for a player for their career or just one year.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#slugging_percentage-instance_method" title="#slugging_percentage (instance method)">- (Float) <strong>slugging_percentage</strong>(year = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets the slugging percentage for a player for their career or just one year
+Formula: ((Hits – doubles – triples – home runs) + (2 * doubles) + (3
+* triples) + (4 * home runs)) / at-bat.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="calculate_slugging_percentage-class_method">
+  
+    + (<tt>Float</tt>) <strong>calculate_slugging_percentage</strong>(_stats) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculates the slugging percentage from an array of stats</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>_stats</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;HittingStatSummary&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>to calculate slugging percentage</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>sluggin percentage for the player</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hitter_formulas.rb', line 33</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_self self kw'>self</span><span class='dot token'>.</span><span class='rubyid_calculate_slugging_percentage identifier id'>calculate_slugging_percentage</span><span class='lparen token'>(</span><span class='rubyid__stats identifier id'>_stats</span><span class='rparen token'>)</span>
+  <span class='rubyid_return return kw'>return</span> <span class='integer val'>0</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_empty? fid id'>empty?</span>
+
+  <span class='rubyid_at_bats_total identifier id'>at_bats_total</span> <span class='assign token'>=</span> <span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_sum identifier id'>sum</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:at_bats</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='rubyid_to_f identifier id'>to_f</span>
+  
+  <span class='rubyid_return return kw'>return</span> <span class='integer val'>0</span><span class='integer val'>.0</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_at_bats_total identifier id'>at_bats_total</span><span class='dot token'>.</span><span class='rubyid_zero? fid id'>zero?</span> <span class='comment val'># return 0% slugging percentage since there were no at bats</span>
+
+  <span class='lparen token'>(</span><span class='lparen token'>(</span><span class='lparen token'>(</span><span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_sum identifier id'>sum</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:hits</span><span class='rparen token'>)</span> <span class='minus op'>-</span> <span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_sum identifier id'>sum</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:doubles</span><span class='rparen token'>)</span> <span class='minus op'>-</span> <span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_sum identifier id'>sum</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:triples</span><span class='rparen token'>)</span> <span class='minus op'>-</span> <span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_sum identifier id'>sum</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:home_runs</span><span class='rparen token'>)</span><span class='rparen token'>)</span> <span class='plus op'>+</span> <span class='lparen token'>(</span><span class='integer val'>2</span> <span class='mult op'>*</span> <span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_sum identifier id'>sum</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:doubles</span><span class='rparen token'>)</span><span class='rparen token'>)</span> <span class='plus op'>+</span> <span class='lparen token'>(</span><span class='integer val'>3</span> <span class='mult op'>*</span> <span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_sum identifier id'>sum</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:triples</span><span class='rparen token'>)</span><span class='rparen token'>)</span> <span class='plus op'>+</span> <span class='lparen token'>(</span><span class='integer val'>4</span> <span class='mult op'>*</span> <span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_sum identifier id'>sum</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:home_runs</span><span class='rparen token'>)</span><span class='rparen token'>)</span><span class='rparen token'>)</span> <span class='div op'>/</span> <span class='rubyid_at_bats_total identifier id'>at_bats_total</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='rubyid_to_f identifier id'>to_f</span><span class='dot token'>.</span><span class='rubyid_round identifier id'>round</span><span class='lparen token'>(</span><span class='integer val'>3</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="batting_average-instance_method">
+  
+    - (<tt>Float</tt>) <strong>batting_average</strong>(year = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Gets the batting averge for a player for their career or just one year</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>year</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>to get batting average</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>batting average for the player</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hitter_formulas.rb', line 9</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_batting_average identifier id'>batting_average</span><span class='lparen token'>(</span><span class='rubyid_year identifier id'>year</span> <span class='assign token'>=</span> <span class='rubyid_nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='rubyid__stats identifier id'>_stats</span> <span class='assign token'>=</span> <span class='rubyid_year identifier id'>year</span><span class='dot token'>.</span><span class='rubyid_nil? fid id'>nil?</span> <span class='integer val'>? </span><span class='rubyid_hitting_stats identifier id'>hitting_stats</span> <span class='colon op'>:</span> <span class='rubyid_hitting_stats identifier id'>hitting_stats</span><span class='lparen token'>(</span><span class='symbol val'>:yearID</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_year identifier id'>year</span><span class='rparen token'>)</span>
+  <span class='rubyid_return return kw'>return</span> <span class='integer val'>0</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_empty? fid id'>empty?</span>
+
+  <span class='rubyid_at_bats_total identifier id'>at_bats_total</span> <span class='assign token'>=</span> <span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_sum identifier id'>sum</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:at_bats</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='rubyid_to_f identifier id'>to_f</span>
+  
+  <span class='rubyid_return return kw'>return</span> <span class='integer val'>0</span><span class='integer val'>.0</span> <span class='rubyid_if if_mod kw'>if</span> <span class='rubyid_at_bats_total identifier id'>at_bats_total</span><span class='dot token'>.</span><span class='rubyid_zero? fid id'>zero?</span> <span class='comment val'># return 0% slugging percentage since there were no at bats, stops divide by 0 error</span>
+
+  <span class='lparen token'>(</span><span class='rubyid__stats identifier id'>_stats</span><span class='dot token'>.</span><span class='rubyid_sum identifier id'>sum</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:hits</span><span class='rparen token'>)</span> <span class='div op'>/</span> <span class='rubyid_at_bats_total identifier id'>at_bats_total</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='rubyid_round identifier id'>round</span><span class='lparen token'>(</span><span class='integer val'>3</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="slugging_percentage-instance_method">
+  
+    - (<tt>Float</tt>) <strong>slugging_percentage</strong>(year = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Gets the slugging percentage for a player for their career or just one year
+Formula: ((Hits – doubles – triples – home runs) + (2 * doubles) + (3
+* triples) + (4 * home runs)) / at-bat</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>year</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>to get slugging percentage</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>slugging percentage for the player</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hitter_formulas.rb', line 24</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_slugging_percentage identifier id'>slugging_percentage</span><span class='lparen token'>(</span><span class='rubyid_year identifier id'>year</span> <span class='assign token'>=</span> <span class='rubyid_nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='rubyid__stats identifier id'>_stats</span> <span class='assign token'>=</span> <span class='rubyid_year identifier id'>year</span><span class='dot token'>.</span><span class='rubyid_nil? fid id'>nil?</span> <span class='integer val'>? </span><span class='rubyid_hitting_stats identifier id'>hitting_stats</span> <span class='colon op'>:</span> <span class='rubyid_hitting_stats identifier id'>hitting_stats</span><span class='lparen token'>(</span><span class='symbol val'>:yearID</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_year identifier id'>year</span><span class='rparen token'>)</span>
+
+  <span class='rubyid_HitterFormulas constant id'>HitterFormulas</span><span class='dot token'>.</span><span class='rubyid_calculate_slugging_percentage identifier id'>calculate_slugging_percentage</span><span class='lparen token'>(</span><span class='rubyid__stats identifier id'>_stats</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Mar  5 09:42:44 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.2 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

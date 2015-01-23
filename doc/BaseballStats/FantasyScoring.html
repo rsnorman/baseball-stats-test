@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: BaseballStats::FantasyScoring
+  
+    &mdash; Documentation by YARD 0.8.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (F)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../BaseballStats.html" title="BaseballStats (module)">BaseballStats</a></span></span>
+     &raquo; 
+    <span class="title">FantasyScoring</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: BaseballStats::FantasyScoring
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/fantasy_scoring.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Library for making it easy to calculate fantasy score and also change
+scoring points</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scoring_definitions-class_method" title="scoring_definitions (class method)">+ (Hash) <strong>scoring_definitions</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reads the scoring definitions from a config file at
+config/fantasy_scoring.json.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fantasy_score_for_hitter-instance_method" title="#fantasy_score_for_hitter (instance method)">- (Integer) <strong>fantasy_score_for_hitter</strong>(year) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets the fantasy stats for a player for a full year.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="scoring_definitions-class_method">
+  
+    + (<tt>Hash</tt>) <strong>scoring_definitions</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reads the scoring definitions from a config file at
+config/fantasy_scoring.json</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>fantasy scoring definitions</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/fantasy_scoring.rb', line 8</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_self self kw'>self</span><span class='dot token'>.</span><span class='rubyid_scoring_definitions identifier id'>scoring_definitions</span>
+  <span class='rubyid_@fantasy_scoring ivar id'>@fantasy_scoring</span> <span class='opasgn op'>||=</span> <span class='rubyid_JSON constant id'>JSON</span><span class='dot token'>.</span><span class='rubyid_parse identifier id'>parse</span><span class='lparen token'>(</span><span class='rubyid_File constant id'>File</span><span class='dot token'>.</span><span class='rubyid_read identifier id'>read</span><span class='lparen token'>(</span><span class='string val'>&quot;config/fantasy_scoring.json&quot;</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="fantasy_score_for_hitter-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>fantasy_score_for_hitter</strong>(year) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Only works for attributes right now, not sure if hitting formulas will be
+used in fantasy scoring</p>
+</div>
+  </div>
+
+
+<p>Gets the fantasy stats for a player for a full year</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>year</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>to calculate score for fantasy year</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>fantasy score for the year</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/fantasy_scoring.rb', line 17</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_fantasy_score_for_hitter identifier id'>fantasy_score_for_hitter</span><span class='lparen token'>(</span><span class='rubyid_year identifier id'>year</span><span class='rparen token'>)</span>
+  <span class='rubyid_score identifier id'>score</span> <span class='assign token'>=</span> <span class='integer val'>0</span>
+  <span class='rubyid_stats identifier id'>stats</span> <span class='assign token'>=</span> <span class='rubyid_hitting_stats identifier id'>hitting_stats</span><span class='lparen token'>(</span><span class='symbol val'>:yearID</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='rubyid_year identifier id'>year</span><span class='rparen token'>)</span>
+
+  <span class='comment val'># Loop through all stats defined in HittingStatSummary and see if they are used to</span>
+  <span class='comment val'># determine fantasy score</span>
+  <span class='rubyid_HittingStatSummary constant id'>HittingStatSummary</span><span class='dot token'>.</span><span class='rubyid_stat_definitions identifier id'>stat_definitions</span><span class='dot token'>.</span><span class='rubyid_each_pair identifier id'>each_pair</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_abbr identifier id'>abbr</span><span class='comma token'>,</span> <span class='rubyid_stat_name identifier id'>stat_name</span><span class='bitor op'>|</span>
+    <span class='rubyid_if if kw'>if</span> <span class='rubyid_FantasyScoring constant id'>FantasyScoring</span><span class='dot token'>.</span><span class='rubyid_scoring_definitions identifier id'>scoring_definitions</span><span class='dot token'>.</span><span class='rubyid_has_key? fid id'>has_key?</span><span class='lparen token'>(</span><span class='rubyid_abbr identifier id'>abbr</span><span class='dot token'>.</span><span class='rubyid_to_s identifier id'>to_s</span><span class='rparen token'>)</span>
+      <span class='rubyid_score identifier id'>score</span> <span class='opasgn op'>+=</span> <span class='rubyid_stats identifier id'>stats</span><span class='dot token'>.</span><span class='rubyid_sum identifier id'>sum</span><span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='rubyid_x identifier id'>x</span><span class='bitor op'>|</span> <span class='rubyid_x identifier id'>x</span><span class='dot token'>.</span><span class='rubyid_send identifier id'>send</span><span class='lparen token'>(</span><span class='rubyid_stat_name identifier id'>stat_name</span><span class='rparen token'>)</span><span class='rbrace token'>}</span> <span class='mult op'>*</span> <span class='rubyid_FantasyScoring constant id'>FantasyScoring</span><span class='dot token'>.</span><span class='rubyid_scoring_definitions identifier id'>scoring_definitions</span><span class='lbrack token'>[</span><span class='rubyid_abbr identifier id'>abbr</span><span class='dot token'>.</span><span class='rubyid_to_s identifier id'>to_s</span><span class='rbrack token'>]</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_score identifier id'>score</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Wed Mar  5 09:42:44 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.2 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

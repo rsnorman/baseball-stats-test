@@ -1,0 +1,5 @@
+lib/hitter_formulas.rb 1480aceed64d8e986e74678e7cc47cdf427db403
+lib/model_base.rb 0c7910b162de2648b88b640a3b1615ef62a3abdf
+lib/report.rb 2112c937c9bde1bd7c7e9de92ef85f7fd2ab9696
+lib/fantasy_scoring.rb e206913f53089490b3bfbee6df3795da7c3e9eea
+lib/stat_definitions.rb 814028eb5cd64f3bf77b41bf13fb6eb098ed39af

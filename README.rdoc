@@ -1,0 +1,78 @@
+= Baseball Stats
+
+== Project Summary
+- Baseball Stats runs on ruby 1.8.7 (haven't updated my laptop to newest version, sorry not tested with 1.9.x)
+- Didn't use a database
+  - I wasn't sure if I could due to more work than just installing some gems
+  - Also would take a long time to initially set up program since 20000+ rows must be inserted somehow into a database
+  - Stats fields would also be harder to define easily without doing a bunch of inner joins
+  - If data was going to constantly have reports run against I would think harder about going this route and reports would just contain sql query to get results
+  - Probably could do some other nice things in database (use ActiveRecord, add indexes for foreign_keys like teamID, yearID, playerID) but didn't think much more about it since I was too far down a different road without a database once I found out I could use one.
+- Thought about having a base Player model and creating an inherited hitter and pitcher class but since a player can be both pitcher and hitter in one league thought it would overly complicate things. Ended up settling for extending Player class with modules when necessary for added pitcher methods. This pitching module would use a new class for modeling the pitcher stats called PitcherStatSummary. Same thought goes to adding fielding stats since most players are both.
+- Wasn't sure if the players in the most improved batting average report had to be over 200 at bats for each season or combined. Did each season since it was combined 500 for fantasy scoring report.
+- Wasn't sure if slugging percentage for Oakland was one value for whole team or each player, so listed each player over .000 and cumulative at end
+- Fantasy scoring will work for attributes but currently can't have points assigned to formulas like batting average or slugging percentage
+- Wasn't sure on how many at bats were required for Triple Crown Winner but required 200 for the season
+- Started running out of time so reports aren't tested like I wanted and some modules have their tests right in the classes that include them
+- Wrote all tests using RSPEC and can be run using the command 'bundle exec rspec'
+- The README.doc and the rest of the documentation can be viewed in a nicer format in a browser. To see documentation just open doc/index.html included in this project.
+
+== Description
+Small program for reading in players and stats and running reports against that data. Can also calculate fantasy scoring and has an easy way to configure fantasy scoring.
+
+== Installation
+
+Before running the BaseballStats program there are some dependencies that must be installed.
+In baseball stats directory, run
+  bundle
+to install all required gems
+
+NOTE: Baseball stats does not use a database so no non-ruby libraries will need to be installed
+
+== Configuration
+
+Currently the only thing that can be configured in BaseballStats is the fantasy scoring. This is contained in the config folder in the fantasy_scoring.json file. Any stat that is contained in the stats data file can have a value assigned to it to calculate fantasy scoring.
+
+To add a new scoring definition add a key/value pair where the key is the stat abbreviation and the value is how many points it is worth for each stat.
+
+ {"HR" => 4, "CS" => -1}
+
+== Usage
+
+Once all dependencies have been installed, to begin using BaseballStats just enter
+  ruby application.rb
+
+First all the data will be read from the players and stats files.
+
+Once this has completed, the user will be presented with a list of reports that can be run. Enter the number corresponding to the report to run it or select the last option to exit or just press enter to exit.
+
+== With More Time
+- Format output so it is more readable
+- Add team model to more easily track stats for a team
+- Write all tests for reports
+- Define formulas in a config file, find and replace placeholders with stat values
+ {
+   hitting_formulas: {
+     batting_average: "H/AB"
+   },
+   pitching_formulas: {
+     earned_run_average: "(ER/IP) x 9"
+   }
+ }
+- Have Stats defined with a config file so that hitting, pitching, and fielding stats don't need to be hard-coded
+ {
+ 	hitting_stats: {
+ 	  "H": "hits",
+ 	  "SB": "stolen_bases",
+ 	  ...
+ 	},
+ 	pitching_stats: {
+ 	  "ER": "earned_runs",
+ 	  "IP": "innings_pitched",
+ 	  ...
+ 	},
+ 	fielding_stats: {
+ 	  "E": "errors",
+ 	  ...
+ 	}
+ }
